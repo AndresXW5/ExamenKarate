@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="ficheroExam.css" title = "CCS_Exam"?> 
+
+<ClaseSuperior>
+
+
+<clase1>
+    <identificador>Identificador</identificador>
+    <id>CU-1</id>
+    
+    <nombre>Nombre</nombre>
+    <no>Realizar Examen</no>
+
+    <descripcion>Descripción</descripcion>
+    <de>El sistema deberá permitir al administrador decidir qué aspirante hace determinado examen.</de>
+
+    <precondicion>Precondición</precondicion>
+    <pe>Si el aspirante cumple todos los requisitos puede realizar examen a que se postula.</pe>
+    
+    <postcondicion>Postcondición</postcondicion>
+    <po>
+        <CondiciónExito>Condición final exitoso: Aspirante aprueba los exámenes.</CondiciónExito>
+        <CondiciónFallida>Condición final fallido: Aspirante no aprueba o suspende el examen.</CondiciónFallida> 
+    </po>
+
+    <actores>Actores</actores>
+    <ac>Administrador y Aspirante.</ac>
+
+    <secuenciaNormal>Secuencia normal
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso>1</paso>
+        <accion>Administrador determina si aspirante nuevo cumple todos los casos include para que el aspirante pueda hacer el examen.</accion>
+
+        <paso>2</paso>
+        <accion>Si cumple todos los casos de uso include.</accion>
+        
+        <paso>3</paso>
+        <accion>Aspirante hace examen al que postula.</accion>
+
+        <paso>4</paso>
+        <accion>Si no cumple todos casos include. </accion>
+       
+        <paso>5</paso>
+        <accion>Pasa a secuencia alternativa.</accion>
+
+        <paso>6</paso>
+        <accion>Si cumple todos los casos include y aspirante no se presenta al examen sin presentar justificación válida a secuencia de error.</accion>
+           
+    </secuenciaNormal>
+
+    <secuenciaAlternativa>Secuencia alterantiva
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso1>1</paso1>
+        <accion1>Se listan todos los casos de uso no cumplidos.
+        </accion1>
+
+        <paso1>2</paso1>
+        <accion1>Se da informe a aspirante del porqué suspende examen parcial o totalmente.</accion1>
+            
+        <paso1>3</paso1>
+        <accion1>Sistema regresa a secuencia normal paso 1.</accion1>
+       
+    </secuenciaAlternativa>
+
+    <secuenciaError>Secuencia de error
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso2>1</paso2>
+        <accion2>El sistema desecha a aspirante</accion2>
+
+        <paso2>2</paso2>
+        <accion2>Vueleve al paso 1 secuencia normal</accion2>
+
+    </secuenciaError>
+
+    <importacia>Importancia</importacia>
+    <im>Vital</im>
+
+    <urgencia>Urgencia</urgencia>
+    <ur>Inmediata</ur>
+
+    <observaciones>Observaciones</observaciones>
+    <ob></ob>
+
+</clase1>
+
+<clase2>
+    <identificador>Identificador</identificador>
+    <id>CU-2</id>
+    
+    <nombre>Nombre</nombre>
+    <no>Suspender Examen</no>
+
+    <descripcion>Descripción</descripcion>
+    <de>El sistema deberá permitir al administrador decidir qué aspirante suspende
+        determinado examen y en algunos casos en determinada etapa. Este caso de uso
+        extiende de realizar examen.</de>
+
+    <precondicion>Precondición</precondicion>
+    <pe>Si el aspirante no cumple todos los requisitos.</pe>
+    
+    <postcondicion>Postcondición</postcondicion>
+    <po>
+        <CondiciónExito>Si aspirante entrega documentos legales.</CondiciónExito>
+        <CondiciónFallida>Si el aspirante no entrega documentos legales.</CondiciónFallida> 
+    </po>
+
+    <actores>Actores</actores>
+    <ac>Administrador</ac>
+
+    <secuenciaNormal>Secuencia normal
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso>1</paso>
+        <accion>Aspirante no entrega documentos legales.</accion>
+
+        <paso>2</paso>
+        <accion>Administrador determina que aspirante suspende examen según sea elcaso.</accion>      
+               
+        <paso>3</paso>
+        <accion>Aspirante es declarado en suspensión parcial o total.</accion>
+
+        <paso>4</paso>
+        <accion>Si suspende parcialmente su resultado anterior es válido por 1 año.</accion>
+       
+        <paso>5</paso>
+        <accion>Si suspende totalmente espera un tiempo de 3 meses.</accion>
+
+        <paso>6</paso>
+        <accion>Si aspirante se retira sin justificación valida pasa a secuencia de error.</accion>
+           
+    </secuenciaNormal>
+
+    <secuenciaAlternativa>Secuencia alterantiva
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso1>1</paso1>
+        <accion1>Se listan todos los casos de uso no cumplidos.
+        </accion1>
+
+        <paso1>2</paso1>
+        <accion1>Se da informe a aspirante del porqué suspende examen parcial o totalmente.</accion1>
+            
+        <paso1>3</paso1>
+        <accion1>Sistema regresa a secuencia normal paso 1.</accion1>
+       
+    </secuenciaAlternativa>
+
+    <secuenciaError>Secuencia de error
+        <pasoT>Paso</pasoT>
+        <accionT>Acción</accionT>
+
+        <paso2>1</paso2>
+        <accion2>Se alerta del retiro inesperado.</accion2>
+
+        <paso2>2</paso2>
+        <accion2>El sistema desecha a aspirante.</accion2>
+
+        <paso2>3</paso2>
+        <accion2>Y vuelve al paso 1 secuencia normal. Caso de uso realizar examen.</accion2>
+        
+    </secuenciaError>
+
+    <importacia>Importancia</importacia>
+    <im>Importante</im>
+
+    <urgencia>Urgencia</urgencia>
+    <ur>Hay Presión</ur>
+
+    <observaciones>Observaciones</observaciones>
+    <ob></ob>
+
+</clase2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+    <cAspirantes>
+        Contiene todos los atributos
+
+    </cAspirantes>
+
+    <cExamen Naspirantes="1 o más">
+        1 o más aspirantes hacen cero o más exámenes
+
+    </cExamen>
+
+    <cAbonarCuota Naspirantes="1 o más">
+        1 o más aspirantes cancelan cero o más exámenes
+
+    </cAbonarCuota>
+
+    <cJueces Njueces="1 o más" Naspirantes="1 o más">
+        1 o más jueces califican a cero o más aspirantes.
+
+    </cJueces>
+
+    <cDispensaMedica Naspirantes="1 o más" presentan="1 o más">
+        cero o más aspirantes presentan 1 o más dispensa médica.
+
+    </cDispensaMedica>
+
+    <cConvalidacionGrados Naspirantes="1 o más" convalidacion="1">
+        cero o más aspirantes hacen 1 convalidación.
+
+    </cConvalidacionGrados>
+
+    <cMeritos Naspirantes="1 o más" meritos="0 o más">
+        cero o más aspirantes tienen cero o más méritos.
+
+    </cMeritos>
+
+    <cTribunal Ntribunal="1" califica="1 o más examenes">
+
+    </cTribunal>
+
+    Clase examen tiene relacion de asociiacion con:
+
+    <CResultados Nexamenes="1 o más resultados">
+
+
+    </CResultados>
+
+    <cAboonoCuotas Nexamenes="1" Nabonos="1 o más">
+
+
+    </cAboonoCuotas>
+
+    <cSuspenderExamen Nexamenes="1 o más" Nsuspender="0 o más">
+        
+
+    </cSuspenderExamen>
+
+    La clase Jueces tiene relación de asociación con:
+
+    <cCriterioEvaluacion jueces="usan todos los criterios de evaluación">
+
+
+    </cCriterioEvaluacion>
+
+    La clase Tribunal tiene relación de asociación con:
+
+    <cJueces nTribunales="1 o más son integrados" Jueces-integrados="1 o todos pero siempre impar">
+
+
+    </cJueces>
+
+
+    Todas estas heredan de la clase examen
+
+    <cQuintoDanySuperior >
+
+    </cQuintoDanySuperior>
+
+    <Hasta3erDan>
+
+    </Hasta3erDan>
+
+    <CinturonNegro>
+
+    </CinturonNegro>
+
+    <CinturonNegroPrimerDan>
+
+    </CinturonNegroPrimerDan>
+
+    <CinturonNegroSegundoDan>
+
+    </CinturonNegroSegundoDan>
+
+   <CinturonNegroTercerDan>
+
+   </CinturonNegroTercerDan>
+
+   <CinturonNegroCuartoDan>
+
+   </CinturonNegroCuartoDan>
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ClaseSuperior>
